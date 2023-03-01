@@ -34,6 +34,17 @@ class _CalculatorState extends State<Calculator> {
       result = '';
       displayText = '';
     }
+    else if ( btnVal == "+/-"){
+      if (displayText[0] != "-") {
+        result = "-" + displayText;
+      } else {
+        result = displayText.substring(1);
+      }
+    }
+    
+    else if ( btnVal == "DEL"){
+      result = displayText.substring(0, displayText.length -1);
+    }
     else if(
       btnVal == "+" ||
       btnVal == "-" ||
@@ -45,6 +56,7 @@ class _CalculatorState extends State<Calculator> {
       result = '';
     }
     else if( btnVal == '=' ) {
+
       num2 = int.parse(displayText);
 
       if (operation == '+') {
